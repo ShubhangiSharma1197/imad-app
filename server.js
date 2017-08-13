@@ -133,7 +133,7 @@ app.get('/submit-name', function(req,res){ // /submit-name?name=xxxx
 });
 
 app.get('/articles/:articleName',function(req,res){
- var articleName = req.params.articleName;
+// var articleName = req.params.articleName;
  pool.query("SELECT * from article WHERE title =$1",[req.params.articleName], function(err,result){
  if(err){
     res.status(500).send(err.toString());
@@ -148,7 +148,7 @@ app.get('/articles/:articleName',function(req,res){
 
 }    
  });
-  res.send(createTemplate(articles[articleName])); 
+  //res.send(createTemplate(articles[articleName])); 
 });
 
 
