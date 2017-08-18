@@ -12,6 +12,7 @@ var config={
     
 };
 var app = express();
+var crypto = require('crypto');
 app.use(morgan('combined'));
 
 /*var articles= { 
@@ -69,7 +70,7 @@ var title=data.title;
 var heading=data.heading;
 var date=data.date;
 var content=data.content;
-var crypto = require('crypto');
+
 var htmlTemplate = `
 
 <html>
