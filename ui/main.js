@@ -34,7 +34,7 @@ button.onclick=function()
    
 };
 
-var submit=document.getElementById('submit_btn');
+/*var submit=document.getElementById('submit_btn');
 submit.onclick = function(){
 var request= new XMLHttpRequest();
     request.onreadystatechange = function(){
@@ -61,5 +61,22 @@ var request= new XMLHttpRequest();
 var name=nameInput.value;
   request.open('GET','http://sharmaneeraj.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
+};*/
+var submitButton = document.getElementById('submit_btn');
+submitButton.onclick = function(){
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange=function(){
+        if(request.readyState===XMLHttpRequest.DONE && request.status ===200){
+            var data = JSON.parse(request.responseText);
+            console.log(data);
+        }
+    };
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    request.open('POST','http://localhost:8080/create-user',true);
+request.setRequestHeader('content-type', 'application/json');
+request.send(JSON.stringify({username:username,password:password}));
 };
 
