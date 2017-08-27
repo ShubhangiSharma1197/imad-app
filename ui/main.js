@@ -52,9 +52,14 @@ var request= new XMLHttpRequest();
            }        
         }
     };
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    request.open('POST','http://localhost:8080/create-user',true);
+    request.send(JSON.stringify({username:username,password:password}));
+    
     var nameInput= document.getElementById('name');
 var name=nameInput.value;
   request.open('GET','http://sharmaneeraj.imad.hasura-app.io/submit-name?name=' + name,true);
-    request.send(JSON.stringify({username:username, password:password}));
+    request.send(null);
 };
 
