@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser  = require('body-parser');
 var morgan = require('morgan');
 var path = require('path');
 var Pool=require('pg').Pool;
