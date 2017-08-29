@@ -13,6 +13,7 @@ img.onclick = function() {
 };`;
 
 //counter code
+/*
 var button=document.getElementById('counter');
 
 button.onclick=function()
@@ -33,7 +34,7 @@ button.onclick=function()
     
    
 };
-
+*/
 var submit=document.getElementById('submit_btn');
 submit.onclick = function(){
 var request= new XMLHttpRequest();
