@@ -6,6 +6,8 @@ var request= new XMLHttpRequest();
         if (request.readyState === XMLHttpRequest.DONE){
             //take some action
            if(request.status === 200){
+               var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
             console.log('user logged in');
             alert('Logged in successfully');
            }else if(request.status === 403){
